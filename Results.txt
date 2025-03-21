@@ -1,0 +1,4 @@
+Results:
+
+1. Con respecto al test UI del Sign up, si hubiera tenido mas tiempo le hubiese agregado una validacion por el al momento de crear el user y el mismo ya existe que muestre el mensaje o que a su vez cree un usuario con otro nombre random
+2. Test de API, hubiera realizado mas validaciones de campos o contemplar ingreso de diferentes parametros para ver que errores que pueden arrojar. Tambien validaciones de otro tipo de api como POST
