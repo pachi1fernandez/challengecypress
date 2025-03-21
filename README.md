@@ -11,8 +11,8 @@ Ensure you have the following installed on your system:
 
 1. Clone this repository:
    ```sh
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone <repo-url>
+   cd Challenge/cypress
    ```
 
 2. Install dependencies:
@@ -38,13 +38,35 @@ npx cypress run
 
 ## Test Overview
 
-This test script automates the signup and login process on the [Automation Exercise](https://automationexercise.com/) website. The test:
+API Tests (api.cy.js)
 
-1. Navigates to the website.
-2. Clicks on the **Sign Up** button.
-3. Fills in the signup form with a randomly generated user.
-4. Submits the form and verifies account creation.
-5. Clicks the **Continue** button after account creation.
+1. Simple QA test path 1:
+- Sends a GET request to /v1/qa/test1.
+- Ensures the response status is 200.
+- Validates response time, headers, and body structure.
+
+2. Simple QA test path 3:
+- Sends a GET request to /v1/qa/test3 without an API key.
+- Ensures the response status is 401.
+- Validates expected error message (BASE-401, API KEY is required).
+
+UI Tests (UI.cy.js)
+
+1. Sign up:
+- Creates a user using the createUser function.
+- Stores the generated email for further use.
+
+2. Log in:
+- Attempts to log in with the generated user.
+- Ensures successful login.
+
+3. User Deletion:
+- After each test, deletes the created user account to keep the system clean.
+
+Utility Functions (common.js)
+- createUser(): Automates user registration on Automation Exercise and returns the generated email.
+
+
 
 ## File Structure
 
@@ -53,6 +75,8 @@ This test script automates the signup and login process on the [Automation Exerc
 │── cypress/e2e/
 ├── ├── api.cy.js 
 │   ├── UI.cy.js 
+│── cypress/utils/
+│   ├── common.cy.js 
 │── package.json
 │── cypress.json (or cypress.config.js)
 │── README.md
@@ -60,8 +84,8 @@ This test script automates the signup and login process on the [Automation Exerc
 
 ## Troubleshooting
 
-- If Cypress fails to launch, ensure dependencies are installed by running `npm install`.
-- Check your `cypress.json` or `cypress.config.js` file for incorrect configurations.
+- If Cypress fails to launch, ensure dependencies are installed by running npm install.
+- Check your cypress.json or cypress.config.js file for incorrect configurations.
 - Run Cypress in debug mode for detailed logs:
   ```sh
   DEBUG=cypress:* npx cypress open
