@@ -1,4 +1,11 @@
 Results:
 
-1. Con respecto al test UI del Sign up, si hubiera tenido mas tiempo le hubiese agregado una validacion por el al momento de crear el user y el mismo ya existe que muestre el mensaje o que a su vez cree un usuario con otro nombre random
+1. Test UI: 
+- Con respecto al test UI del Sign up, si hubiera tenido mas tiempo le hubiese agregado una validacion por el al momento de crear el user y el mismo ya existe que muestre el mensaje 
+o que a su vez cree un usuario con otro nombre random
+- Genere una funcion para crear us usuario, asi puede ser llamadada en cada test que se necesite. Si se puediera crear por api, hubiera optado por este recurso
+- El test de sign up solo valida el usuario creado
+- El test de login llama a la funcion y valida el login
+- El afterEach elimina los users creado, se genero el if por si solo se corren algun test con el .only. 
+- Un detalle que falto agregar es validar que el usuario haya sido eliminado intentando loguarse nuevamente.
 2. Test de API, hubiera realizado mas validaciones de campos o contemplar ingreso de diferentes parametros para ver que errores que pueden arrojar. Tambien validaciones de otro tipo de api como POST
